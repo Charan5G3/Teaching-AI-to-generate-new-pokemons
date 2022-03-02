@@ -1,0 +1,333 @@
+<html>
+    <head>
+      
+      
+        <header>
+            <div class="topnav">
+                <img src = "https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png">
+                <div class="search-container">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search..." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                  </div>
+                  <a href="Login.html">Login</a>
+                  <a href="Create an Account" style = "color: blue;" style = "background-color: blue;">Create account</a>
+
+                
+              </div>
+        </header>
+        <style>
+            .topnav {
+  overflow: hidden;
+  background-color: rgb(14, 13, 13);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: rgb(250, 249, 249);
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+            .center{
+                display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 100px;
+            padding-left: 500px;
+            }
+            .bground{
+                background-color:antiquewhite
+            }
+        </style>
+
+<style>
+    * {box-sizing: border-box;}
+    
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #e9e9e9;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: black;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+    
+    .topnav .search-container {
+      float: right;
+    }
+    
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+    }
+    
+    .topnav .search-container button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .topnav .search-container button:hover {
+      background: #ccc;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .topnav .search-container {
+        float: none;
+      }
+      .topnav a, .topnav input[type=text], .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+      .topnav input[type=text] {
+        border: 1px solid #ccc;  
+      }
+    }
+    </style>
+    </head>
+        
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center>
+            <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--7viqUKU3--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bxjtidhjk4nranioe4pp.jpeg" alt="Pok" width="1000" height="420">
+        </center>
+            <h1 style="font-size:35px;" align = "center"> <b>Teaching AI to Generate New Pokemon</b> </h1>
+      
+        <center>
+
+
+        <p>
+            <p style="font-size:30px">Pokemon was first created in 1996. In the twenty years, it has become one of the most recognizable franchises in the world. By March 2020:</p>
+            <p style="font-size:20px"><li>Pokémon video games have sold over <b>380 million</b> copies worldwide.</li>
+            <li style = "font-size : 20px">Pokémon Go is the most-downloaded mobile game, with over <b>1 billion downloads</b>.</li>
+            <li style = "font-size : 20px">Pokémon Trading Cards have sold over <b>34.1 billion cards</b>.</li>
+            <li style = "font-size : 20px">The entire media franchise is the highest-grossing entertainment media franchise of all time, grossing an estimated <b>$90 billion in lifetime revenue</b></li>
+            </p>
+        <p style = "font-size : 25px">
+            <br>
+            Yet, after all that, there are still only a total of <b>893 unique Pokemon</b>. <br>With AI, we can change that.
+            <br>The fundamental technology we will use in this work is a generative adversarial network. Specifically, the Style GAN variant.
+        </p>
+        </p>
+        <h1><b>An intuitive understanding of GANs, Progressive GAN’s and Style GANs</b></h1>
+        <p style = "font-size : 25px">GAN’s first hit the stage in 2014, and garnered a lot of hype by generating images that looked reasonably realistic, was easy to train and sample from, and was theoretically satisfying. <br>I have a separate post discussing the GAN formulation in more depth.</p>
+        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--uyUF1EqA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jche6evzcwd6d199zvfg.png">
+        <i><br>From the original generative adversarial network paper</i>
+        <p style = "font-size : 25px">Since then, a series of changes have been made to the basic GAN to generate some amazingly realistic looking images.</p>
+        <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--S2oK0mMb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bomxybesryok7tffg0ya.png">
+        <p style = "font-size : 25px">The initial GAN architecture was designed with a generator and discriminator that would closely resemble a standard convolutional neural network that upscales or downscales images.</p>
+        <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--R76Ri230--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sqap0t7170rqpyx9gue7.jpeg">
+        <h2>Progressive GAN</h4>
+            <p style = "font-size : 25px">Progressive GAN’s is an attempt to fix a fundamental problem with traditional GAN’s which is that the generator has a much harder job than the discriminator, especially with high resolution images. (In the same way it’s easier for you to classify an image as being a cat or dog than it would be to draw an image of a cat or dog.)
+
+                Progressive GAN’s alter the training phase of traditional GAN’s by first training a single layer GAN against a 4x4 image, then a two layer GAN against an 8x8 image, reusing the already trained 4x4 layer. This makes the problem for the generator easier during the earlier phases of training, and scales up towards generating high resolution images.</p>
+                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--d45DfGBW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n8pdkaho50pox2fuzu7g.png">
+                <i style = "font-size : 25px"> <br>Progressive GAN’s start by learning how to generate low resolution images and scale up as training progresses.</i>
+                <h2>Style GAN</h2>
+                <p style = "font-size : 25px">However, both traditional GAN’s and Progressive GAN’s offer little control over the image produced by the generator, for instance, generating a person with dark hair vs light hair. Or female vs male. Style GAN’s extend the architecture of traditional GAN’s to allow for more control of the image produced by the generator.</p>
+                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--gTcIClvf--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j7scq1zkxt9v9mknx0jo.png">
+                <p style = "font-size : 25px">The way it does this is by changing the architecture of the generator by adding “style vectors”, which is the main source of randomness in the image generator process. The style vector is injected at each layer in the generator network to add style variations at different resolutions.</p>
+                <p style = "font-size : 25px"><br>The way it does this is by changing the architecture of the generator by adding “style vectors”, which is the main source of randomness in the image generator process. The style vector is injected at each layer in the generator network to add style variations at different resolutions.</p>
+                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--YBtJI3zv--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bz2qpgwyjfpip4kihif3.png">
+                <p style = "font-size : 25px">The style vectors that are used can then be reused from one generated image to the next, by injecting the same style vector, thereby “transferring” the style (hair color, age, gender, etc) from one image to another.</p>
+                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--LrUrAk4b--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8j7p2fykoiqe0csixge3.png">
+                <i style = "font-size : 25px"><br>Style transfer at different layers in the generator</i>
+        <h2>
+            How do I build one?
+        </h2>
+        <p style = "font-size : 25px">There’s a bit too much code to a Style GAN to be able to review all of it, but we can go through each important piece with some code samples.</p>
+        <li style = "font-size : 20px">Building off Progressive GAN’s</li>  
+        <li style = "font-size : 20px">Addition of mapping network</li>
+        <li style = "font-size : 20px">Adaptive instance normalization</li>
+        <li style = "font-size : 20px">Removal of latent vector input to generator</li>
+        <li style = "font-size : 20px">Addition of noise to each block</li>  
+        <h2>The Style GAN architecture</h2>   
+        <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--1ymgs-vW--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6a3nif5j7qd6goh5o4ns.png">
+        <i style = "font-size : 25px"><br>What a Style GAN adds to a Progressive GAN</i> 
+        <p style = "font-size : 25px">The Style GAN starts from Progressive GAN’s and adds a series of improvements.</p>   
+        <h2>Mapping Network</h2>   
+        <p style = "font-size : 25px">Here is the StyleGAN architecture. Notice that the latent variable z is not directly passed into the generator. Rather, it’s passed through an 8 layer MLP, called the mapping network, to generate a “style vector”.</p>
+        <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--3nVusRfc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/akx5ac2uc3pwbeqavy8k.png">    
+        <p style = "font-size : 25px">This style vector is then injected into every layer of the generator network (which is referred to as the synthesis network in this paper). The style vector is used to produce a scale and bias vector for each channel in the image as part of the adaptive instance normalization.</p>
+        <center>
+            <div class="example">
+              <code>
+                <pre style = "font-size: 20px;">
+          flatten = lambda t: [item for sublist in t for item in sublist]
+
+          class MappingNetwork(nn.Module):
+              def __init__(self):
+                  super().__init__()
+                  self.net = nn.Sequential(*flatten(blocks))
+          
+              def forward(self, latent_vector):
+                  style_vector = self.net(latent_vector)
+                  return style_vector
+          </pre
+                >
+              </code>
+            </div>
+          </center>
+    
+          <h2>Adaptive Instance Normalization (AdaIN)</h2>
+          <p style = "font-size: 20px;">To understand how the adaptive instance normalization works, let’s first review how batch normalization works.</p>
+          <center>
+          <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--QKWCiJfc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d3jsr13sqhg480qc82f0.png">
+        </center>
+        <p style = "font-size: 20px;">The formulation of AdaIN is very similar to the formulation for a batch normalization:
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--UVTA5StV--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9ap6nnzm6hs1gyj4egrh.png">
+            <i >Adaptive. instance normalization formulation</i>
+
+            <center>
+                <div class="example">
+                  <code>
+                    <pre style = "font-size: 20px;">
+                        class AdaIN(nn.Module):
+                        def __init__(self):
+                            super().__init__()
+                    
+                        def mu(self, x):
+                            """ Takes a (n,c,h,w) tensor as input and returns the average across
+                            it's spatial dimensions as (h,w) tensor [See eq. 5 of paper]"""
+                            n = torch.sum(x,(2,3))
+                            d = x.shape[2]*x.shape[3]
+                            return n / d
+                    
+                        def sigma(self, x):
+                            """ Takes a (n,c,h,w) tensor as input and returns the standard deviation
+                            across it's spatial dimensions as (h,w) tensor [See eq. 6 of paper] Note
+                            the permutations are required for broadcasting"""
+                            n = torch.sum((x.permute([2,3,0,1])-self.mu(x)).permute([2,3,0,1])**2,(2,3))
+                            d = x.shape[2]*x.shape[3]
+                            return torch.sqrt(n / d)
+                    
+                        def forward(self, x, y):
+                            """ Takes a content embeding x and a style embeding y and changes
+                            transforms the mean and standard deviation of the content embedding to
+                            that of the style. [See eq. 8 of paper] Note the permutations are
+                            required for broadcasting"""
+                            return (self.sigma(y)*((x.permute([2,3,0,1])-self.mu(x))/self.sigma(x)) + self.mu(y)).permute([2,3,0,1])
+              </pre
+                    >
+                  </code>
+                </div>
+              </center>
+        </p>
+        <h2>Addition of Gaussian Noise</h2>
+        <p style = "font-size: 25px;">Gaussian noise is added to the activation maps before each AdaIN operation which is used to generate style variation at each level of the generator.</p>
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--IgYEPEnr--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e2w4j2o1u4h2q0ote4bk.png">
+
+                    <p style = "font-size: 25px;">The reason for introducing this noise is to force the model to learn local style level variations.</p>
+
+<img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--6HUrFsf4--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yi4ix6no8h6jkldjinon.png">
+            <i style = "font-size: 25px;"><br>The added noise is what allows for a generated image to be identical overall but still output variation at local levels
+            </i>
+                <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--K7gtTrXC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vi58429vtcudcad3rb4w.png">
+
+            <i style = "font-size: 25px;"> <br>(a) Noise is applied to all layers. (b) No noise. Noise in fine layers only (64–1024 ). (d) Noise in coarse layers only (4–32 ).</i>
+        <h2>Removal of Latent Vector Input to Generator</h2>
+
+<p style = "font-size: 25px;">Traditional GAN’s generate a latent vector, which is fed to the generator, to produce samples. Style GAN’s actually just use a constant 4x4x512 vector that is kept the same during training and inference. <br>This is possible because the variant comes from the style vectors and gaussian noise added at each layer via the AdaIN operation, rather than the initial latent vector.
+</p>
+        <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--KtEfdbj7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i7qhnmwu7qf9xjmvutp6.png">
+
+    <p style = "font-size: 20px;">Remember that the whole point of Style GAN’s was to discover style vectors that could be reapplied from one image to another. <br>This only works if both images start from the same “canvas”, which is what this 4x4x512 constant acts as. <br>If the canvas changes, then the style vectors learned would not be transferable.</p>
+
+    <h2>Training on a Pokemon Dataset</h2>
+    
+    <p style = "font-size: 20px;">Let’s see what happens when we throw this model against a dataset of ~35,000 Pokemon images.</p>
+    <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--1pV7u89D--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2adi6zgas0umsthgtbxx.gif">
+
+    <p style = "font-size: 25px;">It took about a week to train a model to produce results that looked reasonable on an Nvidia GeForce 3070 GPU. I’m unsure how much better the images would look after a few more weeks of training, but I’ll keep it running for a bit longer.
+
+    </p>
+
+            <h2>A Few Suggestions for New Pokemon</h2>
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--rbgoIAbo--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vu3jx13dqunesb0xhh5d.jpeg">
+            <br>
+            <br>
+            <i style = "font-size: 20px;">Penguion</i>
+            <br>
+            <br>
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--aoeBgD1n--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fb8to3pc13ip2vnxnhh3.jpeg">
+            <br>
+            <br>
+            <i style = "font-size: 20px;">Potatoad</i>
+            <br>
+            <br>
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--eFhtWkgT--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yimwacmme9ovwv8ejgc4.jpeg">
+            <br>
+            <br>
+            <i style = "font-size: 20px;">Albapod</i>
+            <br>
+            <br>
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--NsaL8s4w--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sdx9khfipn5uf080911d.jpeg">
+            <br>
+            <br>
+            <i style = "font-size: 20px;">Hydraleaf</i>
+            <br>
+            <br>
+
+            <img src = "https://res.cloudinary.com/practicaldev/image/fetch/s--GjCzs0JP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r9w28qpki15xlx89rwez.jpeg">
+            <br>
+            <br>
+            <i style = "font-size: 20px;">Firenite</i>
+            
+</body>
+    </center>
+
+</html>
